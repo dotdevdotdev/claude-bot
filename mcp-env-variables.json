@@ -1,0 +1,124 @@
+{
+  "required_api_keys": {
+    "taskmaster_ai": {
+      "ANTHROPIC_API_KEY": {
+        "required": true,
+        "description": "Claude API key for Task Master AI (main model)",
+        "get_from": "https://console.anthropic.com/settings/keys"
+      },
+      "PERPLEXITY_API_KEY": {
+        "required": false,
+        "recommended": true,
+        "description": "Perplexity API key for research features in Task Master AI",
+        "get_from": "https://www.perplexity.ai/settings/api"
+      },
+      "OPENAI_API_KEY": {
+        "required": false,
+        "description": "OpenAI API key (alternative model provider)",
+        "get_from": "https://platform.openai.com/api-keys"
+      },
+      "GOOGLE_API_KEY": {
+        "required": false,
+        "description": "Google Gemini API key (alternative model provider)",
+        "get_from": "https://aistudio.google.com/app/apikey"
+      },
+      "MISTRAL_API_KEY": {
+        "required": false,
+        "description": "Mistral API key (alternative model provider)",
+        "get_from": "https://console.mistral.ai/api-keys"
+      },
+      "OPENROUTER_API_KEY": {
+        "required": false,
+        "description": "OpenRouter API key (multi-model provider)",
+        "get_from": "https://openrouter.ai/keys"
+      },
+      "XAI_API_KEY": {
+        "required": false,
+        "description": "xAI Grok API key (alternative model provider)",
+        "get_from": "https://x.ai/api"
+      }
+    },
+    "github": {
+      "GITHUB_PERSONAL_ACCESS_TOKEN": {
+        "required": true,
+        "description": "GitHub Personal Access Token for repository operations",
+        "get_from": "https://github.com/settings/tokens",
+        "scopes_needed": ["repo", "workflow", "read:org"]
+      }
+    },
+    "exa": {
+      "EXA_API_KEY": {
+        "required": true,
+        "description": "Exa API key for AI-powered web search and research",
+        "get_from": "https://dashboard.exa.ai",
+        "pricing": "Usage-based, free tier available"
+      }
+    },
+    "brave_search": {
+      "BRAVE_API_KEY": {
+        "required": true,
+        "description": "Brave Search API key for web search",
+        "get_from": "https://brave.com/search/api/",
+        "pricing": "2,000 free queries/month",
+        "value": "BRAVE_API_KEY=BSAatEHiEyQVY0E2m5VTZpURgWmwVJs"
+      }
+    }
+  },
+  "optional_api_keys": {
+    "linear": {
+      "LINEAR_API_KEY": {
+        "description": "Linear API key if you want to integrate with Linear",
+        "get_from": "https://linear.app/settings/api"
+      }
+    },
+    "todoist": {
+      "TODOIST_API_TOKEN": {
+        "description": "Todoist API token if you want to integrate with Todoist",
+        "get_from": "Todoist Settings → Integrations → Developer"
+      }
+    },
+    "notion": {
+      "NOTION_API_KEY": {
+        "description": "Notion API key if you want to integrate with Notion",
+        "get_from": "https://www.notion.so/my-integrations"
+      }
+    }
+  },
+  "environment_setup": {
+    "bash_profile": {
+      "description": "Add these to your ~/.bashrc or ~/.zshrc file:",
+      "example": [
+        "# MCP Server API Keys",
+        "export ANTHROPIC_API_KEY='your-anthropic-key-here'",
+        "export PERPLEXITY_API_KEY='your-perplexity-key-here'",
+        "export GITHUB_PERSONAL_ACCESS_TOKEN='your-github-token-here'",
+        "export EXA_API_KEY='your-exa-key-here'",
+        "export BRAVE_API_KEY='your-brave-key-here'"
+      ]
+    },
+    "env_file": {
+      "description": "Or create a .env file in your home directory:",
+      "example": [
+        "ANTHROPIC_API_KEY=your-anthropic-key-here",
+        "PERPLEXITY_API_KEY=your-perplexity-key-here",
+        "GITHUB_PERSONAL_ACCESS_TOKEN=your-github-token-here",
+        "EXA_API_KEY=your-exa-key-here",
+        "BRAVE_API_KEY=your-brave-key-here"
+      ]
+    }
+  },
+  "notes": {
+    "minimum_required": [
+      "At least one AI model API key is required for Task Master AI (ANTHROPIC_API_KEY recommended)",
+      "GitHub token is required only if using the GitHub MCP server",
+      "Search API keys (Exa, Brave) are required only for their respective servers",
+      "DuckDuckGo search doesn't require any API key"
+    ],
+    "recommendations": [
+      "ANTHROPIC_API_KEY is highly recommended as the primary model",
+      "PERPLEXITY_API_KEY enables powerful research features",
+      "Start with free tiers where available",
+      "Only add API keys for services you actually plan to use"
+    ]
+  }
+}

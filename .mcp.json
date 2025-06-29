@@ -1,0 +1,45 @@
+{
+  "mcpServers": {
+    "taskmaster-ai": {
+      "command": "npx",
+      "args": ["-y", "--package=task-master-ai", "task-master-ai"],
+      "env": {
+        "ANTHROPIC_API_KEY": "$ANTHROPIC_API_KEY",
+        "PERPLEXITY_API_KEY": "$PERPLEXITY_API_KEY",
+        "OPENAI_API_KEY": "$OPENAI_API_KEY",
+        "GOOGLE_API_KEY": "$GOOGLE_API_KEY",
+        "MISTRAL_API_KEY": "$MISTRAL_API_KEY",
+        "OPENROUTER_API_KEY": "$OPENROUTER_API_KEY",
+        "XAI_API_KEY": "$XAI_API_KEY"
+      }
+    },
+    "github": {
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "ghcr.io/github/github-mcp-server"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "$GITHUB_PERSONAL_ACCESS_TOKEN"
+      }
+    },
+    "exa": {
+      "command": "npx",
+      "args": ["-y", "exa-mcp-server"],
+      "env": {
+        "EXA_API_KEY": "$EXA_API_KEY"
+      }
+    },
+    "brave-search": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+      "env": {
+        "BRAVE_API_KEY": "$BRAVE_API_KEY"
+      }
+    },
+    "discord-webhook": {
+      "command": "npx",
+      "args": ["-y", "webhook-mcp-server"],
+      "env": {
+        "DISCORD_WEBHOOK_URL": "https://discord.com/api/webhooks/1388957695733792890/N5Lo1qONHNW0p3xUSBceP97xQkpIZlC7Z00WCqbdur--Y3DRyRM2Jf4bfGx9oEjTn9AO"
+      }
+    }
+  }
+}
